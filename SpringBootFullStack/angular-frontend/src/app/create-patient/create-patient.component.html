@@ -1,0 +1,42 @@
+<div class="col-md-6 offset-md-3">
+    <h3>Add Patient</h3>
+ <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="pId">Id</label>
+        <input type="number" class="form-control" id="pId" [(ngModel)]=patient.pId name="pId">
+        
+    </div>
+
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]=patient.name name="name">
+        
+    </div>
+
+    <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" class="form-control" id="age" [(ngModel)]=patient.age name="age">
+        
+    </div>
+    <div class="form-group">
+        <label for="date">dateOfVisit</label>
+        <input type="date" class="form-control" id="date" [(ngModel)]=patient.dateOfVisit name="dateOfVisit">
+        
+    </div>
+
+    <div class="form-group">
+        <label >Select Doctor</label>
+        <select name="doctor.name" id="" class="custom-select" [(ngModel)]=patient.doctor.name  >
+            <option value="default">Choose Doctor</option>
+        <option  *ngFor="let doctor of doctors">
+            {{doctor.name}}
+        </option>
+    </select>
+        
+        
+    </div>
+   
+    <button class="btn btn-success" type="submit">Submit</button>
+
+</form>
+</div>
